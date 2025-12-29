@@ -27,6 +27,7 @@ if ! command -v pip3 &> /dev/null; then
 fi
 
 echo -e "${GREEN}[INFO] 正在检查依赖库 (torch)...${NC}"
+
 if ! python3 -c "import torch" &> /dev/null; then
      echo -e "${RED}[WARN] 未检测到 torch 库，正在从 PyTorch 源在线安装 (这可能需要几分钟)...${NC}"
      pip3 install torch --extra-index-url https://download.pytorch.org/whl/cu118
@@ -63,4 +64,13 @@ if ! command -v ncu &> /dev/null; then
         if command -v ncu &> /dev/null; then
             echo -e "${GREEN}[SUCCESS] Nsight Compute 安装成功！${NC}"
         else
-            echo -e "${RED}[ERROR] 安装看似完成但 ncu 命令仍不可用。请尝试运行 'source ~/.bashrc' 或手动检查 /usr/local/
+            echo -e "${RED}[ERROR] 安装看似完成但 ncu 命令仍不可用。请尝试运行 'source ~/.bashrc' 或手动检查 /usr/local/${NC}"
+        fi
+        
+    else
+        echo -e "${RED}[ERROR] 下载失败，安装包不存在。${NC}"
+    fi
+
+else
+    echo -e "${GREEN}[OK] Nsight Compute (ncu) 已安装${NC}"
+fi

@@ -69,12 +69,17 @@ cd ..
 ```Bash
 sudo ./measure_tool/ncu_script.sh python3 train_resnet.py --batch-size 32
 ```
-输出结果实验结束后，工具会直接在标准输出（stdout）中打印统计信息，核心包含：Nsight Compute 原始数据：各类型指令（如 ffma, hadd）的原始执行次数以及BOPs 指标输出示例片段：
+输出结果实验结束后，工具会直接在标准输出（stdout）中打印统计信息，上方`cnn_test.py`测量BOPs 指标输出示例片段如下：
 ```Plaintext
-...
-[INFO] 正在统计 BOPs...
+# ./measure_tool/ncu_script.sh python3 cnn_test.py
+检查依赖命令...
+依赖命令检查完成，所需命令已安装
+正在创建临时文件...
+临时文件创建成功：/tmp/ncu_output.dt9UVO
+正在执行程序...
+正在统计BOPs...
 
 ==== Nsight Compute 指令统计结果 ====
 
-基本运算总次数 (BOPs): 137,573,052,416
+基本运算总次数 (BOPs): 37,123,293,181.0
 ```

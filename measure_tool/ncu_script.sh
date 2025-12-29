@@ -131,7 +131,7 @@ def main():
     # print(f"\n半精度浮点运算总次数 (BOPs - 半精度): {total_half_precision_bops:,}")
     # print(f"单精度浮点运算总次数 (BOPs - 单精度): {total_single_precision_bops:,}")
     # print(f"双精度浮点运算总次数 (BOPs - 双精度): {total_double_precision_bops:,}")
-    print(f"\n浮点运算总次数 (BOPs): {total_double_precision_bops+total_single_precision_bops/2+total_half_precision_bops/4:,}")
+    print(f"\n基本运算总次数 (BOPs): {total_double_precision_bops+total_single_precision_bops/2+total_half_precision_bops/4:,}")
 
 if __name__ == "__main__":
     main()
